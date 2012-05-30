@@ -1,0 +1,312 @@
+
+<!DOCTYPE html>
+
+<!--
+  Google HTML5 slide template
+
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
+<html>
+  <head>
+    <title>Presentation</title>
+
+    <meta charset='utf-8'>
+    <link rel='stylesheet' href='demos.css'>
+    <script src='slides.js'></script>
+    <script src='demos.js'></script>
+  </head>
+  
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+    
+    
+  </style>
+
+  <body style='display: none'>
+
+    <section class='slides layout-regular template-default'>
+      
+      <!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. -->
+        
+        
+      
+      <article class='biglogo'>
+        <div></div>
+        <h1>HTML5 Speaker Idol</h1>
+      </article>
+
+      <article>
+        <h1>
+          Introduction aux
+          <br>
+          transitions CSS3
+        </h1>
+        <p>
+          Vincent Costel
+          <br>
+          31 Mai 2012
+        </p>
+      </article>
+      <article class='first-demo off'>
+        <h3>
+          C'est quoi ? 
+        </h3>
+        <div class='back'>
+          <img class='front' src='cadhtml5coa-2.png' />
+        </div>
+      </article>
+      <article class='first-demo on'>
+        <h3>
+          C'est quoi ? 
+        </h3>
+        <div class='back'>
+          <img class='front' src='cadhtml5coa-2.png' />
+        </div>
+      </article>
+      <article>
+        <h3>
+          C'est quoi ? 
+        </h3>
+        <ul>
+          <li>Transitions animées en CSS
+          <li>Sans JavaScript !
+          <li>Spécification en cours de développement (Working Draft)
+          <li>Ne pas confondre avec les Animations CSS !  
+        </ul>
+      </article>
+      <article class='slide-not-critical'>
+        <h3>
+          À quoi ça sert ? 
+        </h3>
+        <div>
+          <q lang='en' >
+            Most of the time, transitions just add to the experience and are not necessary for a usable experience. 
+          </q>
+          <div class='author'>
+            HTML5 Please
+          </div>
+          <q lang='fr'>La plupart du temps, les transitions ajoutent simplement à l'expérience et ne sont pas nécessaires pour une expérience utilisable.
+          </q>
+        <div>
+      </article>
+      <article>
+        <h3>À quoi ça sert ?</h3>
+        <ul>
+          <li>Non critique
+          <li>Ésthétique, "Visual rewards"
+          <li>Meilleur feedback visuel, meilleure expérience usager
+          <li>Moins de JavaScript (<code><del>jQuery.animate</del></code>)
+            <ul>
+              <li>Code plus propre, maintenance aisée 
+              <li>Plus léger, intéressant pour un site mobile
+              <li>Exemple: <a href='http://zeptojs.com/'>zepto.js</a>
+            </ul>
+        </ul>
+      </article>
+      <article>
+        <h3>
+          Puis-je l'utiliser aujourd'hui ? 
+        </h3>
+        <q>
+          Oui
+        </q>
+      </article>
+      <article>
+        <h3>
+          Puis-je l'utiliser aujourd'hui ? 
+        </h3>
+        <ul>
+          <li><a href='http://html5please.com/#transitions' title='HTML5 Please'>HTML5 Please</a> Use with fallback
+          <li><a href='http://caniuse.com/css-transitions' title='When can I use CSS3 Transitions?'>CanIUse.com</a> 55.86% de support
+
+          <li>Internet Explorer à partir de IE10...
+          <li>... mais dégradation élégante et amélioration progressive (graceful degradation &amp; progressive enhancement)
+        </ul>
+      </article>
+      
+      <article class='demo-first-transition off'>
+        <h3>Ma première transition CSS</h3>
+          <div class='container'>
+            <div class='logo'></div>
+          </div>
+          <pre>&lt;div class='logo'&gt;&lt;/div&gt;</pre>
+          <style scoped contenteditable >.logo {
+  width: 100px;
+  height: 100px;
+  background: url(html5-logo.svg);
+}
+.logo:hover {
+  width: 700px;
+  background-color: black;
+}</style>
+      </article>
+      <article class='demo-first-transition on'>
+        <h3>Ma première transition CSS<h3>
+        <div class='container'>
+          <div class='logo'></div>
+        </div>
+        <div class='build'>
+          <pre>
+.logo {
+  width: 100px;
+  height: 100px;
+  background: url(html5-logo.svg);
+  -webkit-transition-duration: 1s;
+     -moz-transition-duration: 1s;
+      -ms-transition-duration: 1s;
+       -o-transition-duration: 1s;
+          transition-duration: 1s;
+}
+.logo:hover {
+  width:700px;
+  background-color: black;
+}
+          </pre>
+        </div>
+      </article>
+      <article>
+        <h3>Propriétés CSS</h3>
+        <ul>
+          <li><code>transition-duration</code>
+          <li><code>transition-property</code>
+          <li><code>transition-timing-function</code>
+          <li><code>transition-delay</code>
+          <li><code>transition</code> (raccourci/shortand)
+        </ul>
+      </article>
+      <article class='demo-first-transition on'>
+        <h3><code>transition-property</code></h3>
+        <div class='container'>
+          <div class='logo'></div>
+        </div>
+        <style scoped contenteditable >.logo {
+  //-webkit-transition-property: all;
+}</style>
+      </article>
+      <article class='demo-first-transition on'>
+        <h3><code>transition-delay</code></h3>
+        <div class='container'>
+          <div class='logo'></div>
+        </div>
+        <style scoped contenteditable >.logo {
+  //-webkit-transition-delay: 1s;
+}</style>
+<style scoped contenteditable >.logo:hover {
+  //-webkit-transition-delay: 1s;
+}</style>
+      </article>
+      <article class='demo-first-transition on'>
+        <h3><code>transition-timing-function</code></h3>
+        <div class='container'>
+          <div class='logo'></div>
+        </div>
+        <style scoped contenteditable >.logo {
+  //-webkit-transition-timing-function: linear;
+}</style>
+      </article>
+      <article class='demo-easing'>
+        <h3>
+          Fonctions d'accélération / Easing functions 
+        </h3>
+        <div class='track'>
+          <div class='square ease'></div>
+        </div>
+        <div class='track'>
+          <div class='square linear'></div>
+        </div>
+        <div class='track'>
+          <div class='square ease-in'></div>
+        </div>
+        <div class='track'>
+          <div class='square ease-out'></div>
+        </div>
+        <div class='track'>
+          <div class='square ease-in-out'></div>
+        </div>
+        <div class='track'>
+          <div class='square steps'></div>
+        </div>
+        <div class='track'>
+          <div class='square step-start'></div>
+        </div>
+        <div class='track'>
+          <div class='square step-end'></div>
+        </div>
+        <div class='track'>
+          <div class='square cubic-bezier'></div>
+        </div>
+        <input type='checkbox' onclick='Array.prototype.forEach.call(document.querySelectorAll(".track"), function(el){ el.className = this.checked ? "track on" : "track"; }, this);'  />
+      </article>
+      <article class='demo-first-transition on'>
+        <h3><code>transition</code> (raccourci)</h3>
+        <div class='container'>
+          <div class='logo'></div>
+        </div>
+        <pre>.logo {
+  -webkit-transition: all 1s ease;
+     -moz-transition: all 1s ease;
+      -ms-transition: all 1s ease;
+       -o-transition: all 1s ease;
+          transition: all 1s ease;
+}</pre>
+      </article>
+      <article>
+        <h3>Propriétés animables</h3>
+        <ul>
+          <li>Propriétés numériques
+            <ul>
+              <li><code>margin</code>, <code>padding</code>, <code>width</code>, <code>height</code>...
+              <li><code>opacity</code>
+            </ul>
+          <li>Couleurs
+          <li>CSS3
+            <ul>
+              <li><code>box-shadow</code>, <code>text-shadow</code>
+              <li>Gradients
+              <li>CSS Transforms: translate, rotate, scale, skew
+            </ul>  
+        <ul>
+      </article>
+
+      <article>
+        <h3>Déclencheurs / triggers</h3>
+        <ul>
+          <li>Pseudo-sélecteurs
+            <ul>
+              <li><code>:hover</code>
+              <li><code>:focus</code>
+              <li><code>:enabled</code>, <code>:disabled</code>
+              <li><code>:checked</code>
+            </ul>
+          <li>Media Queries
+          <li>JavaScript (changement de classe CSS)
+        </ul>
+      </article>
+
+      <article class='demo-box-shadow demo-css-transforms'>
+        <h3>
+          Exemples
+        </h3>
+        <p><code>:focus + box-shadow</code>
+        <div>
+          <input placeholder='Une boite de texte invitante...'/>
+        </div>
+        <p>CSS Transforms
+        <div class='logo-2'></div>
+        <p>Media Queries : <a href='http://css-tricks.com/' >CSS-Tricks.com</a>
+        <p>Javascript : <a href='http://twitter.github.com/bootstrap/javascript.html#carousel'>Twitter Bootstrap Carousel</a> 
+      </article>
+
+    </section>
+
+  </body>
+</html>

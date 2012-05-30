@@ -1,0 +1,239 @@
+style[contenteditable] {
+  display: block;
+  white-space: pre;
+  font-family: 'Droid Sans Mono', 'Courier New', monospace;
+  font-size: 20px;
+  line-height: 28px;
+  padding: 5px 10px;
+  letter-spacing: -1px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  color: black;
+  background: #f0f0f0;
+  border: 1px solid #e0e0e0;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+.slide-not-critical > div {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.slide-not-critical > div:hover {
+  margin-top: -556px;
+}
+.slide-not-critical > div:hover :lang(fr) {
+  opacity: 1;
+}
+.slide-not-critical > div:hover :lang(en),
+.slide-not-critical > div:hover .author {
+  opacity: 0;
+}
+.slide-not-critical > div :lang(fr) {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+  opacity: 0;
+}
+.slide-not-critical > div :lang(en) {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.first-demo .back {
+  background: url(cadhtml5coa.png) no-repeat;
+}
+.first-demo .front:hover {
+  opacity: 0;
+}
+.first-demo.on .front {
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.demo-first-transition .container {
+  margin-top: 20px;
+}
+.demo-first-transition.on .logo {
+  width: 100px;
+  height: 100px;
+  background: url(html5-logo.svg);
+  -webkit-transition-duration: 1s;
+  -moz-transition-duration: 1s;
+  -ms-transition-duration: 1s;
+  -o-transition-duration: 1s;
+  transition-duration: 1s;
+}
+.demo-first-transition.on .logo:hover {
+  width: 700px;
+  background-color: black;
+}
+.demo-easing .track {
+  margin-top: 10px;
+  width: 768px;
+  border: 1px solid black;
+  padding: 5px;
+  position: relative;
+}
+.demo-easing .track.on .square,
+.demo-easing .track:hover .square {
+  margin-left: 738px;
+  height: 30px;
+  background: url(html5-logo.svg);
+}
+.demo-easing .square {
+  width: 30px;
+  height: 30px;
+  background: url(html5-logo.svg);
+  -webkit-transition: all 1s;
+  -moz-transition: all 1s;
+  -ms-transition: all 1s;
+  -o-transition: all 1s;
+  transition: all 1s;
+}
+.demo-easing .square::after {
+  content: '';
+  display: block;
+  margin-left: 30px;
+  width: 500px;
+}
+.demo-easing .ease::after {
+  content: 'ease';
+  display: block;
+  margin-left: 30px;
+  width: 500px;
+}
+.demo-easing .linear {
+  -webkit-transition-timing-function: linear;
+  -moz-transition-timing-function: linear;
+  -ms-transition-timing-function: linear;
+  -o-transition-timing-function: linear;
+  transition-timing-function: linear;
+}
+.demo-easing .linear::after {
+  content: 'linear';
+  display: block;
+  margin-left: 30px;
+  width: 500px;
+}
+.demo-easing .ease-in {
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  -ms-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+.demo-easing .ease-in::after {
+  content: 'ease-in';
+  display: block;
+  margin-left: 30px;
+  width: 500px;
+}
+.demo-easing .ease-out {
+  -webkit-transition-timing-function: ease-out;
+  -moz-transition-timing-function: ease-out;
+  -ms-transition-timing-function: ease-out;
+  -o-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.demo-easing .ease-out::after {
+  content: 'ease-out';
+  display: block;
+  margin-left: 30px;
+  width: 500px;
+}
+.demo-easing .ease-in-out {
+  -webkit-transition-timing-function: ease-in-out;
+  -moz-transition-timing-function: ease-in-out;
+  -ms-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
+}
+.demo-easing .ease-in-out::after {
+  content: 'ease-in-out';
+  display: block;
+  margin-left: 30px;
+  width: 500px;
+}
+.demo-easing .step-start {
+  -webkit-transition-timing-function: step-start;
+  -moz-transition-timing-function: step-start;
+  -ms-transition-timing-function: step-start;
+  -o-transition-timing-function: step-start;
+  transition-timing-function: step-start;
+}
+.demo-easing .step-start::after {
+  content: 'step-start';
+  display: block;
+  margin-left: 30px;
+  width: 500px;
+}
+.demo-easing .step-end {
+  -webkit-transition-timing-function: step-end;
+  -moz-transition-timing-function: step-end;
+  -ms-transition-timing-function: step-end;
+  -o-transition-timing-function: step-end;
+  transition-timing-function: step-end;
+}
+.demo-easing .step-end::after {
+  content: 'step-end';
+}
+.demo-easing .steps {
+  -webkit-transition-timing-function: steps(7, start);
+  -moz-transition-timing-function: steps(7, start);
+  -ms-transition-timing-function: steps(7, start);
+  -o-transition-timing-function: steps(7, start);
+  transition-timing-function: steps(7, start);
+}
+.demo-easing .steps::after {
+  content: 'steps(7,start)';
+}
+.demo-easing .cubic-bezier {
+  -webkit-transition-timing-function: cubic-bezier(0.5, -0.5, 0.5, 1.5);
+  -moz-transition-timing-function: cubic-bezier(0.5, -0.5, 0.5, 1.5);
+  -ms-transition-timing-function: cubic-bezier(0.5, -0.5, 0.5, 1.5);
+  -o-transition-timing-function: cubic-bezier(0.5, -0.5, 0.5, 1.5);
+  transition-timing-function: cubic-bezier(0.5, -0.5, 0.5, 1.5);
+}
+.demo-easing .cubic-bezier::after {
+  content: 'cubic-bezier(0.5, -0.5, 0.5, 1.5)';
+}
+.demo-box-shadow input {
+  margin-top: 15px;
+  font-size: 1em;
+  padding: 10px;
+  width: 770px;
+  border: 1px solid #cccccc;
+  box-shadow: none;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.demo-box-shadow input:focus {
+  outline: 0 ;
+  border-color: rgba(82, 168, 236, 0.8);
+  box-shadow: inset 1px 1px 3px rgba(0, 0, 0, 0.2), 0 0 20px rgba(82, 168, 236, 0.6);
+}
+.demo-css-transforms .logo-2 {
+  width: 100px;
+  height: 100px;
+  background: url(html5-logo.svg);
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
+}
+.demo-css-transforms .logo-2:hover {
+  -webkit-transform: rotate(180deg) skewX(20deg) skewY(20deg);
+}
