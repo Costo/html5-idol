@@ -53,11 +53,11 @@ style[contenteditable] {
   opacity: 0;
 }
 .first-demo.on .front {
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  transition: 1s;
 }
 .demo-first-transition .container {
   margin-top: 20px;
