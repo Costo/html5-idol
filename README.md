@@ -1,2 +1,2 @@
-html5-idol
+Présentation pour HTML5 Speaker Idol Montréal
 ==========
