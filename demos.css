@@ -65,7 +65,8 @@ style[contenteditable] {
 .demo-first-transition.on .logo {
   width: 100px;
   height: 100px;
-  background: url(html5-logo.svg);
+  background: url(html5-logo.svg) 50% 50% no-repeat;
+  background-size: 80px;
   -webkit-transition-duration: 1s;
   -moz-transition-duration: 1s;
   -ms-transition-duration: 1s;
@@ -74,7 +75,7 @@ style[contenteditable] {
 }
 .demo-first-transition.on .logo:hover {
   width: 700px;
-  background-color: black;
+  background-color: silver;
 }
 .demo-easing .track {
   margin-top: 10px;
@@ -235,5 +236,5 @@ style[contenteditable] {
   transition: all 0.4s ease;
 }
 .demo-css-transforms .logo-2:hover {
-  -webkit-transform: rotate(180deg) skewX(20deg) skewY(20deg);
+  -webkit-transform: rotate(360deg) scale(2);
 }

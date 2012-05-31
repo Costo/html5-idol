@@ -15,7 +15,7 @@
 
 <html>
   <head>
-    <title>Presentation</title>
+    <title>Introduction aux transitions CSS3</title>
 
     <meta charset='utf-8'>
     <link rel='stylesheet' href='demos.css'>
@@ -51,7 +51,8 @@
           transitions CSS3
         </h1>
         <p>
-          Vincent Costel
+          Vincent Costel (@Costo)
+          <a href='http://www.apcurium.com' >www.apcurium.com</a>
           <br>
           31 Mai 2012
         </p>
@@ -79,8 +80,22 @@
         <ul>
           <li>Transitions animées en CSS
           <li>Sans JavaScript !
-          <li>Spécification en cours de développement (Working Draft)
+          <li>Spécification en cours de développement (<a href='http://www.w3.org/TR/css3-transitions/'>Working Draft</a>)
           <li>Ne pas confondre avec les Animations CSS !  
+        </ul>
+      </article>
+      <article>
+        <h3>À quoi ça sert ?</h3>
+        <ul>
+          <li>Fonctionnalité non critique
+          <li>Ésthétique, Design, "Visual rewards"
+          <li>Meilleur feedback visuel, meilleure expérience usager
+          <li>Remplace JavaScript (<code><del>jQuery.animate</del></code>)
+            <ul>
+              <li>Code plus propre, maintenance aisée 
+              <li>Plus léger, intéressant pour un site mobile
+              <li>Peut être généré par un outil
+            </ul>
         </ul>
       </article>
       <article class='slide-not-critical'>
@@ -99,20 +114,6 @@
         <div>
       </article>
       <article>
-        <h3>À quoi ça sert ?</h3>
-        <ul>
-          <li>Non critique
-          <li>Ésthétique, "Visual rewards"
-          <li>Meilleur feedback visuel, meilleure expérience usager
-          <li>Moins de JavaScript (<code><del>jQuery.animate</del></code>)
-            <ul>
-              <li>Code plus propre, maintenance aisée 
-              <li>Plus léger, intéressant pour un site mobile
-              <li>Exemple: <a href='http://zeptojs.com/'>zepto.js</a>
-            </ul>
-        </ul>
-      </article>
-      <article>
         <h3>
           Puis-je l'utiliser aujourd'hui ? 
         </h3>
@@ -125,11 +126,11 @@
           Puis-je l'utiliser aujourd'hui ? 
         </h3>
         <ul>
-          <li><a href='http://html5please.com/#transitions' title='HTML5 Please'>HTML5 Please</a> Use with fallback
-          <li><a href='http://caniuse.com/css-transitions' title='When can I use CSS3 Transitions?'>CanIUse.com</a> 55.86% de support
+          <li><a href='http://html5please.com/#transitions' title='HTML5 Please'>HTML5 Please</a> : Use with fallback
+          <li><a href='http://caniuse.com/css-transitions' title='When can I use CSS3 Transitions?'>CanIUse.com</a> : 55.86% de support
 
           <li>Internet Explorer à partir de IE10...
-          <li>... mais dégradation élégante et amélioration progressive (graceful degradation &amp; progressive enhancement)
+          <li>... mais dégradation élégante et amélioration progressive sont des principes clés de HTML5 <br>(graceful degradation &amp; progressive enhancement)
         </ul>
       </article>
       
@@ -140,13 +141,13 @@
           </div>
           <pre>&lt;div class='logo'&gt;&lt;/div&gt;</pre>
           <style scoped contenteditable >.logo {
-  width: 100px;
-  height: 100px;
-  background: url(html5-logo.svg);
+  width: 100px;  height: 100px;
+  background: url(html5-logo.svg) 50% 50% no-repeat;
+  background-size: 80px;
 }
 .logo:hover {
   width: 700px;
-  background-color: black;
+  background-color: silver;
 }</style>
       </article>
       <article class='demo-first-transition on'>
@@ -157,9 +158,9 @@
         <div class='build'>
           <pre>
 .logo {
-  width: 100px;
-  height: 100px;
-  background: url(html5-logo.svg);
+  width: 100px;  height: 100px;
+  background: url(html5-logo.svg) 50% 50% no-repeat;
+  background-size: 80px;
   -webkit-transition-duration: 1s;
      -moz-transition-duration: 1s;
       -ms-transition-duration: 1s;
@@ -168,7 +169,7 @@
 }
 .logo:hover {
   width:700px;
-  background-color: black;
+  background-color: silver;
 }
           </pre>
         </div>
@@ -200,17 +201,14 @@
         <style scoped contenteditable >.logo {
   //-webkit-transition-delay: 1s;
 }</style>
-<style scoped contenteditable >.logo:hover {
-  //-webkit-transition-delay: 1s;
-}</style>
       </article>
       <article class='demo-first-transition on'>
         <h3><code>transition-timing-function</code></h3>
         <div class='container'>
           <div class='logo'></div>
         </div>
-        <style scoped contenteditable >.logo {
-  //-webkit-transition-timing-function: linear;
+<style scoped contenteditable >.logo {
+  //-webkit-transition-timing-function: steps(7,start);
 }</style>
       </article>
       <article class='demo-easing'>
@@ -218,10 +216,10 @@
           Fonctions d'accélération / Easing functions 
         </h3>
         <div class='track'>
-          <div class='square ease'></div>
+          <div class='square linear'></div>
         </div>
         <div class='track'>
-          <div class='square linear'></div>
+          <div class='square ease'></div>
         </div>
         <div class='track'>
           <div class='square ease-in'></div>
@@ -236,15 +234,10 @@
           <div class='square steps'></div>
         </div>
         <div class='track'>
-          <div class='square step-start'></div>
-        </div>
-        <div class='track'>
-          <div class='square step-end'></div>
-        </div>
-        <div class='track'>
           <div class='square cubic-bezier'></div>
         </div>
         <input type='checkbox' onclick='Array.prototype.forEach.call(document.querySelectorAll(".track"), function(el){ el.className = this.checked ? "track on" : "track"; }, this);'  />
+        <p><a href='http://matthewlein.com/ceaser/'>CSS easing animation tool</a></p>
       </article>
       <article class='demo-first-transition on'>
         <h3><code>transition</code> (raccourci)</h3>
@@ -272,7 +265,7 @@
             <ul>
               <li><code>box-shadow</code>, <code>text-shadow</code>
               <li>Gradients
-              <li>CSS Transforms: translate, rotate, scale, skew
+              <li>CSS Transforms: <code>translate</code>, <code>rotate</code>, <code>scale</code>, <code>skew</code>
             </ul>  
         <ul>
       </article>
@@ -280,7 +273,7 @@
       <article>
         <h3>Déclencheurs / triggers</h3>
         <ul>
-          <li>Pseudo-sélecteurs
+          <li>Sélecteurs de pseudo-classe
             <ul>
               <li><code>:hover</code>
               <li><code>:focus</code>
@@ -304,6 +297,12 @@
         <div class='logo-2'></div>
         <p>Media Queries : <a href='http://css-tricks.com/' >CSS-Tricks.com</a>
         <p>Javascript : <a href='http://twitter.github.com/bootstrap/javascript.html#carousel'>Twitter Bootstrap Carousel</a> 
+      </article>
+      <article>
+        <h2>Questions?</h2>
+        <p>Cette présentation est open-source<br>
+          <a href='http://costo.github.com/html5-idol'>costo.github.com/html5-idol</a>
+        </p>
       </article>
 
     </section>
